@@ -14,8 +14,10 @@ export function createBuildPlugin({ base, assetsDir, minification }: ResolvedOpt
 
   return {
     name: 'vite-plugin-psvg',
-    resolveId(id) {
-      return isPSVG(id) ? id : null
+    resolveId(id, importer) {
+      return isPSVG(id)
+        ? path.resolve((importer && path.dirname(importer)) || '.', id)
+        : null
     },
     async load(id) {
       if (!isPSVG(id))
