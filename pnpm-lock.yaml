@@ -1,7 +1,7 @@
 importers:
   .:
     dependencies:
-      '@antfu/psvg': 0.0.1
+      '@lingdong/psvg': 0.0.1
       hash-sum: 2.0.0
       slash: 3.0.0
       svgo: 1.3.2
@@ -19,7 +19,7 @@ importers:
       vite: 1.0.0-rc.9
     specifiers:
       '@antfu/eslint-config': ^0.4.3
-      '@antfu/psvg': ^0.0.1
+      '@lingdong/psvg': ^0.0.1
       '@types/hash-sum': ^1.0.0
       '@types/svgo': ^1.3.3
       '@typescript-eslint/eslint-plugin': ^4.8.1
@@ -112,11 +112,6 @@ packages:
       typescript: '*'
     resolution:
       integrity: sha512-+vO8S0AGIdRm3ow5RsnfRSNWDrtZuw7W7QjdZvZv7kfNq8erDCucK+bl4pVMW1S7HEnizBj83CKObpirnIjaIg==
-  /@antfu/psvg/0.0.1:
-    dev: false
-    hasBin: true
-    resolution:
-      integrity: sha512-ETfRA41vSrTod6zQyuxZcXvTtbwai/L2Wl2JhzTQB4n8rstAFceZX0zqmo75JUIs+edCC5o1Cz3XMZScIy390g==
   /@babel/code-frame/7.10.4:
     dependencies:
       '@babel/highlight': 7.10.4
@@ -237,6 +232,11 @@ packages:
       node: '>= 8.0.0'
     resolution:
       integrity: sha512-7ulRC1da/rBa6kj6P4g2aJfnET3z8Uf3SWu60cjbtxTA5g8lxRdX/Bd2P92EagGwwAhANeNw8T8if99rJliR6Q==
+  /@lingdong/psvg/0.0.1:
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha512-+MaIKyQdD4JUjojOyMozwIF7GBUjhxWo1hHTcvZJQOrACXLQQiW5K2oN5A8Z4orZPkuyn1NO6lgb+SVoUxWg/w==
   /@nodelib/fs.scandir/2.1.3:
     dependencies:
       '@nodelib/fs.stat': 2.0.3
