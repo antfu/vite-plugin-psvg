@@ -21,10 +21,10 @@ export function createBuildPlugin({ base, assetsDir, minification }: ResolvedOpt
       if (!isPSVG(id))
         return
 
-      const svg = compilePSVG(await readFile(id, 'utf-8'))
+      let svg = compilePSVG(await readFile(id, 'utf-8'))
 
-      // if (minification)
-      //   svg = await svgo.optimize(svg)
+      if (minification)
+        svg = (await svgo.optimize(svg)).data
 
       const baseName = path.basename(id, '.psvg')
       const resolvedFileName = `${baseName}.${hash_sum(id)}.svg`
