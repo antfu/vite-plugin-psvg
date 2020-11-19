@@ -1,4 +1,4 @@
-import { readFile } from 'fs/promises'
+import { promises as fs } from 'fs'
 import path from 'path'
 import { compilePSVG } from '@lingdong/psvg'
 import hash_sum from 'hash-sum'
@@ -23,7 +23,7 @@ export function createBuildPlugin({ base, assetsDir, minification }: ResolvedOpt
       if (!isPSVG(id))
         return
 
-      let svg = compilePSVG(await readFile(id, 'utf-8'))
+      let svg = compilePSVG(await fs.readFile(id, 'utf-8'))
 
       if (minification)
         svg = (await svgo.optimize(svg)).data

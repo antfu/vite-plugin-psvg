@@ -1,4 +1,4 @@
-import { readFile, stat } from 'fs/promises'
+import { promises as fs } from 'fs'
 import { compilePSVG } from '@lingdong/psvg'
 import { ServerPlugin } from 'vite'
 import { ResolvedOptions } from './types'
@@ -25,13 +25,13 @@ export function createServer({ autoReload }: ResolvedOptions): ServerPlugin {
 
       try {
         const path = koa.path.slice(1)
-        const mtime = +(await stat(path)).mtime
+        const mtime = +(await fs.stat(path)).mtime
         if (mtime && cache.get(path)?.mtime === mtime) {
           koa.body = cache.get(path)!.data
           // console.log(`cache hit ${path} - ${mtime}`)
         }
         else {
-          const data = compilePSVG(await readFile(path, 'utf-8'))
+          const data = compilePSVG(await fs.readFile(path, 'utf-8'))
           cache.set(path, { mtime, data })
           koa.body = data
         }
