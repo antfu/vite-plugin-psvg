@@ -1,5 +1,4 @@
 import type { Plugin } from 'vite'
-import { createServer } from './dev'
 import { Options, ResolvedOptions } from './types'
 import { createBuildPlugin } from './build'
 
@@ -15,14 +14,7 @@ function VitePluginPSVG(options: Options = {}): Plugin {
     minification: true,
   }, options)
 
-  return {
-    configureServer: createServer(resolved),
-    rollupInputOptions: {
-      pluginsPreBuild: [
-        createBuildPlugin(resolved),
-      ],
-    },
-  }
+  return createBuildPlugin(resolved)
 }
 
 export default VitePluginPSVG
