@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
-    "module": "ESNext",
-    "target": "es2017",
+    "target": "ESNext",
     "lib": ["ESNext", "DOM"],
-    "esModuleInterop": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
     "strict": true,
     "strictNullChecks": true,
-    "moduleResolution": "Node",
-    "resolveJsonModule": true,
+    "esModuleInterop": true,
     "skipLibCheck": true
   },
   "exclude": [

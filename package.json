@@ -1,18 +1,25 @@
 {
   "name": "vite-plugin-psvg",
-  "description": "PSVG for Vite",
   "version": "0.2.0",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
-  "license": "MIT",
+  "packageManager": "pnpm@9.0.5",
+  "description": "PSVG for Vite",
   "author": "antfu <anthonyfu117@hotmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/antfu/vite-plugin-psvg",
   "repository": {
     "type": "git",
     "url": "https://github.com/antfu/vite-plugin-psvg"
   },
-  "homepage": "https://github.com/antfu/vite-plugin-psvg",
   "bugs": "https://github.com/antfu/vite-plugin-psvg/issues",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -22,28 +29,29 @@
     "example:build": "npm -C example run build",
     "build": "tsup src/index.ts --dts --format cjs,esm",
     "prepublishOnly": "npm run build",
-    "release": "npx bumpp && npm publish && git push"
-  },
-  "dependencies": {
-    "@lingdong/psvg": "^0.0.2",
-    "hash-sum": "^2.0.0",
-    "slash": "^3.0.0",
-    "svgo": "^1.3.2"
+    "release": "npx bumpp && npm publish",
+    "lint": "eslint ."
   },
   "peerDependencies": {
     "@vue/compiler-sfc": "^3.0.2"
   },
+  "dependencies": {
+    "@lingdong/psvg": "^0.0.2",
+    "hash-sum": "^2.0.0",
+    "slash": "^5.1.0",
+    "svgo": "^3.2.0"
+  },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.4.3",
-    "@types/hash-sum": "^1.0.0",
-    "@types/svgo": "^1.3.3",
-    "@typescript-eslint/eslint-plugin": "^4.14.1",
-    "@vue/compiler-sfc": "^3.0.5",
-    "eslint": "^7.18.0",
-    "rollup": "^2.38.1",
-    "standard-version": "^9.1.0",
-    "tsup": "^3.12.0",
-    "typescript": "^4.1.3",
-    "vite": "^2.0.0-beta.59"
+    "@antfu/eslint-config": "^2.15.0",
+    "@types/hash-sum": "^1.0.2",
+    "@types/node": "^20.12.7",
+    "@types/svgo": "^3.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.7.1",
+    "@vue/compiler-sfc": "^3.4.24",
+    "eslint": "^9.1.1",
+    "rollup": "^4.16.4",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.10"
   }
 }

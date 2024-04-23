@@ -1,6 +1,6 @@
-import { UserConfig } from 'vite'
-import PSVG from 'vite-plugin-psvg'
+import type { UserConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
+import PSVG from '../src/index'
 
 const config: UserConfig = {
   plugins: [

@@ -1,6 +1,6 @@
 <p align='center'><img src='./assets/vite.svg'></p>
 
-# PSVG Vite Plugin 
+# PSVG Vite Plugin
 
 [PSVG - Programmable SVG](https://github.com/LingDong-/psvg) for [Vite](https://github.com/vitejs/vite)
 
@@ -22,7 +22,7 @@ export default {
   plugins: [
     PSVG()
   ],
-};
+}
 ```
 
 Then use it as normal SVGs or images.
