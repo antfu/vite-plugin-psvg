@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-psvg",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "packageManager": "pnpm@9.0.5",
   "description": "PSVG for Vite",
   "author": "antfu <anthonyfu117@hotmail.com>",
